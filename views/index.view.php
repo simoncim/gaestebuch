@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" type="text/css" href="./styles/lib/montserrat/webfonts/Montserrat.css" />
     <link rel="stylesheet" type="text/css" href="./styles/main.css" />
     <title>Gästebuch</title>
 </head>
+
 <body>
     <div class="container">
         <h1 class="guestbook-heading">Gästebuch</h1>
         <form method="POST" action="submit.php">
-            <?php if(isset($errorMessage)): ?>
+            <?php if (isset($errorMessage)): ?>
                 <p><?php echo e($errorMessage); ?></p>
             <?php endif; ?>
             <label class="guestbook-entry-label" for="name">Dein Name:</label>
-            <input 
+            <input
                 required="required"
                 class="guestbook-entry-input"
                 type="text"
@@ -25,20 +27,20 @@
                 name="name" />
 
             <label class="guestbook-entry-label" for="title">Titel des Eintrags:</label>
-            <input 
+            <input
                 required="required"
-                class="guestbook-entry-input" 
-                type="text" 
+                class="guestbook-entry-input"
+                type="text"
                 id="title"
                 name="title" />
 
             <label class="guestbook-entry-label" for="content">Inhalt des Eintrags:</label>
-            <textarea 
+            <textarea
                 required="required"
                 rows="4"
-                class="guestbook-entry-input" 
-                type="text" 
-                id="content" 
+                class="guestbook-entry-input"
+                type="text"
+                id="content"
                 name="content"></textarea>
 
             <div class="guestbook-form-buttons">
@@ -51,16 +53,16 @@
 
         <pre><?php print_r($entries); ?></pre>
 
-        <?php foreach($entries AS $entry): ?>
+        <?php foreach ($entries as $entry): ?>
             <?php
-                $paragraphs = explode("\n", $entry['content']);
-                $filteredParagraphs = [];
-                foreach ($paragraphs AS $paragraph) {
-                    $paragraph = trim($paragraph);
-                    if (strlen($paragraph) > 0) {
-                        $filteredParagraphs[] = $paragraph;
-                    }
+            $paragraphs = explode("\n", $entry['content']);
+            $filteredParagraphs = [];
+            foreach ($paragraphs as $paragraph) {
+                $paragraph = trim($paragraph);
+                if (strlen($paragraph) > 0) {
+                    $filteredParagraphs[] = $paragraph;
                 }
+            }
             ?>
             <div class="guestbook-entry">
                 <div class="guestbook-entry-header">
@@ -72,14 +74,14 @@
                     </span>
                 </div>
                 <div class="guestbook-entry-content">
-                    <?php foreach($filteredParagraphs AS $p): ?>
+                    <?php foreach ($filteredParagraphs as $p): ?>
                         <p><?php echo e($p); ?></p>
                     <?php endforeach; ?>
                 </div>
             </div>
         <?php endforeach; ?>
 
-        
+
 
         <ul class="guestbook-pagination">
             <li class="guestbook-pagination-li">
@@ -104,4 +106,5 @@
 
     </div>
 </body>
+
 </html>
