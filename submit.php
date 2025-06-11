@@ -1,7 +1,7 @@
 <?php
 
-require __DIR__ . '/inc/db-connect.php';
-require __DIR__ . '/inc/functions.php';
+require_once __DIR__ . '/inc/db-connect.php';
+require_once __DIR__ . '/inc/functions.php';
 
 if (!empty($_POST)) {
 

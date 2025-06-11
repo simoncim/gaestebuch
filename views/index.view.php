@@ -50,8 +50,6 @@
 
         <hr class="guestbook-separator" />
 
-        <pre><?php print_r($entries); ?></pre>
-
         <?php foreach($entries AS $entry): ?>
             <div class="guestbook-entry">
                 <div class="guestbook-entry-header">
