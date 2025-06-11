@@ -12,9 +12,13 @@
 <body>
     <div class="container">
         <h1 class="guestbook-heading">Gästebuch</h1>
-        <form>
+        <form method="POST" action="submit.php">
+            <?php if(isset($errorMessage)): ?>
+                <p><?php echo e($errorMessage); ?></p>
+            <?php endif; ?>
             <label class="guestbook-entry-label" for="name">Dein Name:</label>
             <input 
+                required="required"
                 class="guestbook-entry-input"
                 type="text"
                 id="name"
@@ -22,6 +26,7 @@
 
             <label class="guestbook-entry-label" for="title">Titel des Eintrags:</label>
             <input 
+                required="required"
                 class="guestbook-entry-input" 
                 type="text" 
                 id="title"
@@ -29,6 +34,7 @@
 
             <label class="guestbook-entry-label" for="content">Inhalt des Eintrags:</label>
             <textarea 
+                required="required"
                 rows="4"
                 class="guestbook-entry-input" 
                 type="text" 
@@ -40,6 +46,7 @@
                 <input class="button" type="submit" value="Absenden">
             </div>
         </form>
+
 
         <hr class="guestbook-separator" />
 
@@ -83,7 +90,7 @@
         <hr class="guestbook-separator" />
 
         <footer class="guestbook-footer">
-            <p>Implementiert im PHP-Kurs</p>
+            <p>Gästebuch für Hotel Könighof</p>
         </footer>
 
     </div>
