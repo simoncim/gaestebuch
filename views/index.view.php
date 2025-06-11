@@ -47,10 +47,21 @@
             </div>
         </form>
 
-
         <hr class="guestbook-separator" />
 
+        <pre><?php print_r($entries); ?></pre>
+
         <?php foreach($entries AS $entry): ?>
+            <?php
+                $paragraphs = explode("\n", $entry['content']);
+                $filteredParagraphs = [];
+                foreach ($paragraphs AS $paragraph) {
+                    $paragraph = trim($paragraph);
+                    if (strlen($paragraph) > 0) {
+                        $filteredParagraphs[] = $paragraph;
+                    }
+                }
+            ?>
             <div class="guestbook-entry">
                 <div class="guestbook-entry-header">
                     <h3 class="guestbook-entry-title">
@@ -61,9 +72,9 @@
                     </span>
                 </div>
                 <div class="guestbook-entry-content">
-                    <p>
-                        <?php echo e($entry['content']); ?>
-                    </p>
+                    <?php foreach($filteredParagraphs AS $p): ?>
+                        <p><?php echo e($p); ?></p>
+                    <?php endforeach; ?>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -88,7 +99,7 @@
         <hr class="guestbook-separator" />
 
         <footer class="guestbook-footer">
-            <p>Gästebuch für Hotel Könighof</p>
+            <p>Implementiert im PHP-Kurs</p>
         </footer>
 
     </div>
