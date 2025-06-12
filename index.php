@@ -3,7 +3,7 @@
 require_once __DIR__ . '/inc/db-connect.php';
 require_once __DIR__ . '/inc/functions.php';
 
-$perPage = 2;
+$perPage = 5;
 $currentPage = 1;
 if (isset($_GET['page'])) {
     $currentPage = @(int) $_GET['page'];

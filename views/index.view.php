@@ -49,8 +49,6 @@
 
         <hr class="guestbook-separator" />
 
-        <pre><?php print_r($entries); ?></pre>
-
         <?php foreach($entries AS $entry): ?>
             <?php
                 $paragraphs = explode("\n", $entry['content']);
@@ -79,42 +77,25 @@
             </div>
         <?php endforeach; ?>
 
-        
-        <?php var_dump($perPage); ?><br />
-        <?php var_dump($countTotal) ?>
 
         <?php
             $numPages = ceil($countTotal / $perPage);
-            var_dump($numPages);
 
         ?>
-        
-        <ul class="guestbook-pagination">
-            <?php for($x = 1; $x <= $numPages; $x++): ?>
-                <li class="guestbook-pagination-li">
-                    <a 
-                        class="guestbook-pagination-a" 
-                        href="index.php?<?php echo http_build_query(['page' => $x]); ?>">
-                        
-                        <?php echo e($x); ?>
-                    </a>
-                </li>
-            <?php endfor; ?>
-            <?php /*
-            <li class="guestbook-pagination-li">
-                <a class="guestbook-pagination-a guestbook-pagination-active" href="#">1</a>
-            </li>
-            <li class="guestbook-pagination-li">
-                <a class="guestbook-pagination-a" href="#">2</a>
-            </li>
-            <li class="guestbook-pagination-li">
-                <a class="guestbook-pagination-a" href="#">3</a>
-            </li>
-            <li class="guestbook-pagination-li">
-                <a class="guestbook-pagination-a" href="#">4</a>
-            </li>
-            */ ?>
-        </ul>
+        <?php if ($numPages > 1): ?>
+            <ul class="guestbook-pagination">
+                <?php for($x = 1; $x <= $numPages; $x++): ?>
+                    <li class="guestbook-pagination-li">
+                        <a 
+                            class="guestbook-pagination-a<?php if($x === $currentPage): ?> guestbook-pagination-active<?php endif; ?>" 
+                            href="index.php?<?php echo http_build_query(['page' => $x]); ?>">
+                            
+                            <?php echo e($x); ?>
+                        </a>
+                    </li>
+                <?php endfor; ?>
+            </ul>
+        <?php endif; ?>
 
         <hr class="guestbook-separator" />
 
