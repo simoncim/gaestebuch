@@ -9,8 +9,7 @@ try {
     $pdo = new PDO('mysql:host=localhost;dbname=php_guestbook', 'root', '', [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
-}
-catch(PDOException $e) {
+} catch (PDOException $e) {
     // Falls eine PDOException auftritt (z.B. Verbindungsfehler), wird diese abgefangen.
     // Ausgabe einer Fehlermeldung an den Benutzer.
     echo 'Probleme mit der Datenbankverbindung...';
