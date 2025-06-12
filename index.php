@@ -4,14 +4,7 @@
 require_once __DIR__ . '/inc/db-connect.php';
 require_once __DIR__ . '/inc/functions.php';
 
-<<<<<<< HEAD
-// Anzahl der Einträge pro Seite für die Paginierung
 $perPage = 3;
-
-// Standardmäßig wird die erste Seite angezeigt
-=======
-$perPage = 3;
->>>>>>> c6d61f662f95e82e6312d7887c1392fb498f87fb
 $currentPage = 1;
 
 // Prüft, ob ein Seitenparameter übergeben wurde
