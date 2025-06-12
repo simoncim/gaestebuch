@@ -1,4 +1,4 @@
-Projekt Gästebuch mit PHP 
+Projekt GÃ¤stebuch mit PHP 
 mit Datenbankanbindung 
 von Najeb und Simon
 
@@ -10,12 +10,12 @@ Muss
 001	HTML-Struktur mit CSS 1
 002	Datenbank einrichten 1
 003	Verbindung zur Datenbank 1
-004	Programmierung für das Absenden des Formulars 1
+004	Programmierung fÃ¼r das Absenden des Formulars 1
 005	Paginierung einfach 2
 
 Kann
 006	Paginierung detailliert 4
-007	Git-Hub Verknüpfung 3
+007	Git-Hub VerknÃ¼pfung 3
 008 	Formatierung 6
 009	Kommentierung 4
 

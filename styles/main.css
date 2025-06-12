@@ -1,15 +1,19 @@
+/* Setzt das Box-Modell auf border-box für alle Elemente, damit Padding und Border in der Gesamtbreite/Höhe enthalten sind */
 * {
     box-sizing: border-box;
 }
 
+/* Definiert die Standardschriftart für die gesamte Seite */
 html {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Legt die Hintergrundfarbe für die gesamte Seite fest */
 body {
     background-color: #fffcf7;
 }
 
+/* Zentriert den Container, begrenzt die maximale Breite und sorgt für seitlichen Innenabstand */
 .container {
     max-width: 45rem;
     padding-left: 2rem;
@@ -18,27 +22,30 @@ body {
     margin-right: auto;
 }
 
+/* Stil für die Hauptüberschrift des Gästebuchs */
 .guestbook-heading {
-    color: #e97200;
-    text-transform: uppercase;
-    text-align: center;
+    color: #e97200; /* Orangefarbener Text */
+    text-transform: uppercase; /* Großbuchstaben */
+    text-align: center; /* Zentriert */
     font-size: 3rem;
     margin-top: 2.5rem;
     margin-bottom: 2rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.1em; /* Buchstabenabstand */
 }
 
+/* Stil für die Beschriftung der Eingabefelder */
 .guestbook-entry-label {
     display: block;
-    color: #4c5866;
+    color: #4c5866; /* Dunkelgrauer Text */
     font-size: 1rem;
 }
 
+/* Stil für die Eingabefelder im Gästebuch */
 .guestbook-entry-input {
-    -webkit-appearance: none;
+    -webkit-appearance: none; /* Entfernt Standard-Stile in Webkit-Browsern */
     appearance: none;
     display: block;
-    width: 100%;
+    width: 100%; /* Volle Breite */
     background-color: white;
     color: #4c5866;
     border: 0.0625rem solid #4c5866;
@@ -46,36 +53,42 @@ body {
     line-height: 1.5em;
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem; /* Abgerundete Ecken */
     margin-bottom: 0.75rem;
     margin-top: 0.25rem;
 }
 
+/* Hebt das Eingabefeld hervor, wenn es fokussiert ist */
 .guestbook-entry-input:focus {
     outline: none;
-    border: 0.0625rem solid #e97200;
+    border: 0.0625rem solid #e97200; /* Orangefarbener Rahmen */
 }
 
+/* Zentriert die Schaltflächen im Formular */
 .guestbook-form-buttons {
     text-align: center;
 }
 
+/* Stil für Schaltflächen */
 .button {
     font-family: inherit;
     -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
-    border: 0px solid transparent;
-    background-color: #e97200;
+    border: 0px solid transparent; /* Kein sichtbarer Rahmen */
+    background-color: #e97200; /* Orangefarbener Hintergrund */
     color: white;
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
     border-radius: 0.5rem;
 }
+
+/* Ändert die Hintergrundfarbe der Schaltfläche beim Überfahren mit der Maus */
 .button:hover {
     background-color: #b35802;
 }
 
+/* Stil für die Trennlinie zwischen Gästebucheinträgen */
 .guestbook-separator {
     -webkit-appearance: none;
     appearance: none;
@@ -84,6 +97,7 @@ body {
     border: 0.03125rem solid #4c5866;
 }
 
+/* Stil für einen einzelnen Gästebucheintrag */
 .guestbook-entry {
     background-color: white;
     color: #4c5866;
@@ -94,6 +108,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Stil für den Titel eines Gästebucheintrags */
 .guestbook-entry-title {
     color: #e97200;
     font-weight: normal;
@@ -102,12 +117,14 @@ body {
     font-size: 1.25rem;
 }
 
+/* Kopfbereich eines Gästebucheintrags: Titel und Autor nebeneinander */
 .guestbook-entry-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
 }
 
+/* Stil für den Autorennamen, sorgt für abgeschnittenen Text bei Überlänge */
 .guestbook-entry-author {
     white-space: nowrap;
     max-width: 50%;
@@ -116,6 +133,7 @@ body {
     text-align: right;
 }
 
+/* Stil für den Text eines Gästebucheintrags */
 .guestbook-entry-content > p {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -123,10 +141,12 @@ body {
     font-size: 1rem;
 }
 
+/* Entfernt den unteren Abstand beim letzten Absatz im Eintrag */
 .guestbook-entry-content > p:last-child {
     margin-bottom: 0;
 }
 
+/* Stil für die Paginierungsliste unter dem Gästebuch */
 .guestbook-pagination {
     margin: 1.75rem -0.5rem;
     padding: 0;
@@ -136,6 +156,7 @@ body {
     flex-wrap: wrap;
 }
 
+/* Stil für einzelne Paginierungslinks */
 .guestbook-pagination-a {
     display: block;
     min-width: 2.5rem;
@@ -148,19 +169,24 @@ body {
     text-align: center;
     margin: 0.25rem 0.5rem;
 }
+
+/* Hover-Effekt für Paginierungslinks */
 .guestbook-pagination-a:hover {
     background-color: #b35802;
 }
 
+/* Stil für die aktive Paginierungsseite */
 .guestbook-pagination-active,
 .guestbook-pagination-active:hover {
     background-color: #4c5866;
 }
 
+/* Stil für den Footer des Gästebuchs */
 .guestbook-footer {
     color: #4c5866;
 }
 
+/* Abstand nach unten für den Footer */
 .guestbook-footer {
     margin-bottom: 2rem;
 }
