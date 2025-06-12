@@ -16,8 +16,8 @@ Muss
 Kann
 006	Paginierung detailliert 4
 007	Git-Hub Verknüpfung 3
-008 	Formatierung 6
+008 Formatierung 6
 009	Kommentierung 4
 
 Umgesetzt
-001,002, 003, 004, 005, 006, 007
+001,002, 003, 004, 005, 006, 007, 008, 009
